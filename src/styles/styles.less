@@ -1,0 +1,80 @@
+//@import url('https://fonts.googleapis.com/css?family=Roboto+Serif:600.css');
+
+@import 'colors.less';
+
+#app-root-2022-population .app {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  .chart_container {
+    max-width: 1350px;
+    overflow: visible;
+    @media all and (max-width: 991px) {
+      margin: auto auto 20px auto;
+    }
+    @media all and (min-width: 992px) {
+      margin: auto auto 20px auto;
+    }
+    hr {
+      border-color: #eeeeee;
+      border-style: solid;
+      border-width: 1px 0 0 0;
+      margin: 0.5em 0;
+    }
+    .chart {
+      font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+      min-height: 440px;
+      opacity: 0;
+      transition-duration: 500ms;
+      transition-property: opacity;
+      width: 100%;
+      .unctad_logo {
+        float: right;
+        height: 60px;
+        width: 60px;
+      }
+      .x_axis_heading {
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .tooltip_container {
+        .tooltip_header {
+          color: #000;
+          font-size: 20px;
+          line-height: 22px;
+          margin: 0 0 5px 0;
+        }
+        .tooltip_label {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 20px;
+        }
+        .tooltip_value {
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 20px;
+        }
+      }
+    }
+    .highcharts-button-hover {
+      rect {
+        fill: #fff;
+      }
+      .highcharts-button-symbol {
+        stroke: @ungrey;
+      }
+    }
+    .highcharts-button-symbol {
+      stroke: #000;
+    }
+    .highcharts-contextmenu {
+      li {
+        font-size: 12px !important;
+        &:hover {
+          background-color: @unblue !important; 
+        }
+      }
+    }
+  }
+}
+
+@import 'basics.less';
