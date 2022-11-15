@@ -184,8 +184,20 @@ function StackedLineChart({
       responsive: {
         rules: [{
           chartOptions: {
-            legend: {
-              layout: 'horizontal'
+            title: {
+              margin: 20
+            }
+          },
+          condition: {
+            maxWidth: 800
+          }
+        }, {
+          chartOptions: {
+            title: {
+              style: {
+                fontSize: '22px',
+                lineHeight: '26px'
+              }
             }
           },
           condition: {
@@ -209,14 +221,14 @@ function StackedLineChart({
       },
       title: {
         align: 'left',
-        margin: 80,
+        margin: 40,
         style: {
           color: '#000',
           fontSize: '30px',
           fontWeight: 700
         },
         text: title,
-        widthAdjust: -180,
+        widthAdjust: -130,
         x: 100,
       },
       tooltip: {
@@ -231,7 +243,7 @@ function StackedLineChart({
           // eslint-disable-next-line react/no-this-in-sfc
           const total = this.points.reduce((acc, val) => acc + val.y, 0);
           const rows = [];
-          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1] * 1000, data_decimals))}</span></div>`).join(''));
+          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1] * 1000, data_decimals))} = ${formatNr(roundNr((point[1] / total) * 100, 0))}%</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
           return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}<br /><div><span class="tooltip_label">Total:</span> <span class="tooltip_value">${formatNr(roundNr(total * 1000, data_decimals))}</span></div></div>`;
         },
@@ -264,22 +276,22 @@ function StackedLineChart({
         plotLines: [{
           color: '#aaa096',
           label: {
-            align: 'left',
+            align: 'center',
+            rotation: 0,
             style: {
               color: 'rgba(0, 0, 0, 0.8)',
               fontFamily: 'Roboto',
               fontSize: '16px',
               fontWeight: 700,
             },
-            rotation: 0,
-            verticalAlign: 'top',
             text: 'Projections →',
+            verticalAlign: 'top',
             x: 10,
             y: 30
           },
           zIndex: 4,
           value: 2022,
-          width: 3
+          width: 2
         }],
         showFirstLabel: true,
         showLastLabel: true,

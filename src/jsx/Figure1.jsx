@@ -18,13 +18,12 @@ function Figure1() {
       data: values.map((e, j) => ({
         x: labels[j],
         y: e
-
       })),
       zoneAxis: 'x',
       zones: [{
         value: 2022
       }, {
-        fillColor: (i === 1) ? 'rgba(114, 191, 68, 0.3)' : 'rgba(0, 158, 219, 0.3)'
+        fillColor: (i === 1) ? 'rgba(114, 191, 68, 0.4)' : 'rgba(0, 158, 219, 0.4)'
       }],
       name: el.Name
     });
@@ -55,9 +54,9 @@ function Figure1() {
         idx="1"
         note="The graph provides estimates from 1950 to 2021 and projections from 2022 to 2050 of total population"
         source="UNCTADstat based on UN DESA Population Division, World Population Prospects 2022."
-        subtitle="World population in developing and developed economies, billions"
+        subtitle="People living in developing and developed economies, billions"
         suffix=""
-        title="World population is growing in developing economies"
+        title="World population growth is mostly in developing economies"
         ylabel=""
       />
       )}
