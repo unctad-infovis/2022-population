@@ -105,6 +105,7 @@ function StackedLineChart({
         enabled: false
       },
       exporting: {
+        filename: '2022-population-unctad',
         buttons: {
           contextButton: {
             menuItems: ['viewFullscreen', 'separator', 'downloadPNG', 'downloadPDF', 'separator', 'downloadCSV'],
@@ -243,9 +244,9 @@ function StackedLineChart({
           // eslint-disable-next-line react/no-this-in-sfc
           const total = this.points.reduce((acc, val) => acc + val.y, 0);
           const rows = [];
-          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1] * 1000, data_decimals))} = ${formatNr(roundNr((point[1] / total) * 100, 0))}%</span></div>`).join(''));
+          rows.push(values.map(point => `<div style="color: ${point[2]}"><span class="tooltip_label">${(point[0]) ? `${point[0]}: ` : ''}</span><span class="tooltip_value">${formatNr(roundNr(point[1], data_decimals))} = ${formatNr(roundNr((point[1] / total) * 100, 0))}%</span></div>`).join(''));
           // eslint-disable-next-line react/no-this-in-sfc
-          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}<br /><div><span class="tooltip_label">Total:</span> <span class="tooltip_value">${formatNr(roundNr(total * 1000, data_decimals))}</span></div></div>`;
+          return `<div class="tooltip_container"><h3 class="tooltip_header">${xlabel} ${this.x}</h3>${rows}<br /><div><span class="tooltip_label">Total:</span> <span class="tooltip_value">${formatNr(roundNr(total, data_decimals))}</span></div></div>`;
         },
         shadow: false,
         shared: true,
