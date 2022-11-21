@@ -315,7 +315,7 @@ function StackedLineChart({
         labels: {
           formatter() {
             // eslint-disable-next-line react/no-this-in-sfc
-            return `${this.value / 1000000}`;
+            return `${this.value / 1000000000}`;
           },
           rotation: 0,
           style: {
