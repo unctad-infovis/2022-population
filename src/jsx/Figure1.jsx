@@ -60,7 +60,6 @@ function Figure1() {
         ylabel=""
       />
       )}
-      <noscript>Your browser does not support JavaScript!</noscript>
     </div>
   );
 }
