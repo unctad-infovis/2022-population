@@ -45,7 +45,7 @@ Highcharts.SVGRenderer.prototype.symbols.download = (x, y, w, h) => {
 };
 
 function StackedLineChart({
-  data, data_decimals, idx, note, source, subtitle, title, xlabel, ylabel, ymax, ymin
+  data, data_decimals, idx, note = false, source, subtitle = false, title, xlabel = 'Year', ylabel = '', ymax = undefined, ymin = undefined
 }) {
   const chartRef = useRef();
 
@@ -396,15 +396,6 @@ StackedLineChart.propTypes = {
   ylabel: PropTypes.string,
   ymax: PropTypes.number,
   ymin: PropTypes.number
-};
-
-StackedLineChart.defaultProps = {
-  note: false,
-  subtitle: false,
-  xlabel: 'Year',
-  ylabel: '',
-  ymax: undefined,
-  ymin: undefined
 };
 
 export default StackedLineChart;
